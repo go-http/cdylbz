@@ -26,16 +26,16 @@ const html = `
 			<div class="pure-u-22-24">
 				<form class="pure-form" method="POST">
 					<select name="querytype">
-						<option value="drug">药品</option>
-						<option value="service">医疗服务</option>
-						<option value="material">医用材料</option>
+						<option value="drug" {{if eq .querytype "drug"}}selected{{end}}>药品</option>
+						<option value="service" {{if eq .querytype "service"}}selected{{end}}>医疗服务</option>
+						<option value="material" {{if eq .querytype "material"}}selected{{end}}>医用材料</option>
 					</select>
 					<input name="keyword" value="{{.keyword}}"/>
 					<button type="submit" class="pure-button pure-button-primary">查询</button>
 				</form>
 
 				{{with .items}}
-				<table class="pure-table pure-table-odd">
+				<table class="pure-table pure-table-striped">
 					<thead>
 						<tr>
 							<th>药品编码</th>
@@ -79,9 +79,11 @@ func main() {
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	keyword := r.FormValue("keyword")
+	querytype := r.FormValue("querytype")
 
 	templateData := map[string]interface{}{
-		"keyword": keyword,
+		"keyword":   keyword,
+		"querytype": querytype,
 	}
 
 	defer tpl.Execute(w, templateData)
@@ -93,7 +95,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	var err error
 	var items []cdylbz.Item
 
-	switch r.FormValue("querytype") {
+	switch querytype {
 	case "drug":
 		items, err = cdylbz.QueryDrug(keyword)
 	case "service":
