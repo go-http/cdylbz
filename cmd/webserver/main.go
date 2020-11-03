@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 
@@ -102,6 +103,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		items, err = cdylbz.QueryService(keyword)
 	case "material":
 		items, err = cdylbz.QueryMaterial(keyword)
+	default:
+		err = fmt.Errorf("未知查询类型")
 	}
 
 	if err != nil {
