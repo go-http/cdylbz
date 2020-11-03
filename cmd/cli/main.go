@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/athurg/cdylbz"
+	"github.com/go-http/cdylbz"
 )
 
 var queryDrug, queryService, queryMaterial string

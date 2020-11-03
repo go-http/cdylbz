@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/athurg/cdylbz"
+	"github.com/go-http/cdylbz"
 )
 
 const html = `
