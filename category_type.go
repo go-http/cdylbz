@@ -4,14 +4,14 @@ type CategoryType int
 
 const (
 	CategoryTypeUnknown = iota
-	CategoryTypeMedical
+	CategoryTypeDrug
 	CategoryTypeService2
 	CategoryTypeService3
 	CategoryTypeMaterial
 )
 
 var categoryTypes = map[CategoryType]string{
-	CategoryTypeMedical:  "药品",
+	CategoryTypeDrug:     "药品",
 	CategoryTypeService2: "治疗服务2",
 	CategoryTypeService3: "治疗服务3",
 	CategoryTypeMaterial: "医用材料",

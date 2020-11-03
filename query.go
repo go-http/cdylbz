@@ -9,8 +9,8 @@ import (
 
 const ServerUrl = "http://cdsylbz.chengdu.gov.cn/cdsi_wxgzh/fwcUser/serchInfo"
 
-func QueryMedical(keyword string) ([]Item, error) {
-	return QueryPage(CategoryTypeMedical, keyword, 1)
+func QueryDrug(keyword string) ([]Item, error) {
+	return QueryPage(CategoryTypeDrug, keyword, 1)
 }
 
 func QueryService(keyword string) ([]Item, error) {
