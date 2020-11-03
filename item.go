@@ -1,4 +1,4 @@
-package main
+package cdylbz
 
 //药品或者检查项目、材料
 type Item struct {

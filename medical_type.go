@@ -1,4 +1,4 @@
-package main
+package cdylbz
 
 var medicalTypes = map[string]string{
 	"01": "西药",

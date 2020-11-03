@@ -1,4 +1,4 @@
-package main
+package cdylbz
 
 type CategoryType int
 
