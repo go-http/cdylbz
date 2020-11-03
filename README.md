@@ -1,4 +1,4 @@
-# 成都医保查询工具
+# 成都医保查询工具 [![PkgGoDev](https://pkg.go.dev/badge/github.com/go-http/cdylbz)](https://pkg.go.dev/github.com/go-http/cdylbz)
 
 用于查询指定药品或者医疗服务、医用材料是否符合成都市医保报销标准。
 
