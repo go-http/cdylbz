@@ -3,7 +3,7 @@ package cdylbz
 //药品或者检查项目、材料
 type Item struct {
 	MedicalType MedicalType  `json:"aka063"`        //药品类别
-	ReimburType ReimburType  `json:"aka065"`        //收费等级/限价：1甲2乙3丙
+	ReimburType ReimburType  `json:"aka065,string"` //收费等级/限价：1甲2乙3丙
 	Madein      MadeinType   `json:"ake004"`        //生产地类别: 1国内2国外
 	Category    CategoryType `json:"ake003,string"` //编码类型，1药品、2/3诊疗服务、4医用材料
 

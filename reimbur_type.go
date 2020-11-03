@@ -1,17 +1,24 @@
 package cdylbz
 
-type ReimburType string
+type ReimburType int
 
-var applyTypes = map[string]string{
-	"1": "社保甲类",
-	"2": "社保乙类",
-	"3": "自费丙类",
+const (
+	ReimburTypeUnknow ReimburType = iota
+	ReimburTypeA
+	ReimburTypeB
+	ReimburTypeC
+)
+
+var reimburTypes = map[ReimburType]string{
+	ReimburTypeA: "社保甲类",
+	ReimburTypeB: "社保乙类",
+	ReimburTypeC: "自费丙类",
 }
 
 func (v ReimburType) String() string {
-	if desc, ok := applyTypes[string(v)]; ok {
+	if desc, ok := reimburTypes[v]; ok {
 		return desc
 	}
 
-	return string(v)
+	return "未知报销类型"
 }
